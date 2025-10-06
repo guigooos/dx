@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio de Aldo e Jucimara</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: "Segoe UI", Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #ffc107;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 300px;
+    }
+
+    label {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffc107;
+      color: #111;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #ffb300;
+    }
+
+    #resultado {
+      margin-top: 25px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jogo de Palavras: Aldo x Jucimara</h1>
+
+  <div class="input-container">
+    <div>
+      <label for="palavraA">Palavra de Aldo:</label>
+      <input type="text" id="palavraA" placeholder="Digite a palavra de Aldo">
+    </div>
+
+    <div>
+      <label for="palavraB">Palavra de Jucimara:</label>
+      <input type="text" id="palavraB" placeholder="Digite a palavra de Jucimara">
+    </div>
+
+    <button onclick="comparar()">Comparar</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script>
+    function comparar() {
+      const A = document.getElementById("palavraA").value.trim();
+      const B = document.getElementById("palavraB").value.trim();
+
+      if (!A || !B) {
+        document.getElementById("resultado").textContent = "Preencha as duas palavras!";
+        return;
+      }
+
+      let resultado;
+      if (A.length > B.length) {
+        resultado = "A (Aldo venceu)";
+      } else if (B.length > A.length) {
+        resultado = "B (Jucimara venceu)";
+      } else {
+        resultado = "* (Empate)";
+      }
+
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>
