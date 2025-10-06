@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio: Tira-teima</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: "Segoe UI", Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #ff5555;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 280px;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff5555;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff3333;
+    }
+
+    #resultado {
+      margin-top: 25px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏸 Desafio: Tira-teima</h1>
+
+  <div class="input-container">
+    <div>
+      <label for="x">Coordenada X:</label>
+      <input type="number" id="x" placeholder="Digite o valor de X">
+    </div>
+
+    <div>
+      <label for="y">Coordenada Y:</label>
+      <input type="number" id="y" placeholder="Digite o valor de Y">
+    </div>
+
+    <button onclick="verificar()">Verificar</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const x = Number(document.getElementById("x").value);
+      const y = Number(document.getElementById("y").value);
+
+      if (isNaN(x) || isNaN(y)) {
+        document.getElementById("resultado").textContent = "Digite valores válidos!";
+        return;
+      }
+
+      if (x >= 0 && x <= 432 && y >= 0 && y <= 468) {
+        document.getElementById("resultado").textContent = "dentro";
+      } else {
+        document.getElementById("resultado").textContent = "fora";
+      }
+    }
+  </script>
+</body>
+</html>

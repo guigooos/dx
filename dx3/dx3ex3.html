@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zerinho ou Um</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background:#2f2f2f; color:#eee; padding:24px; }
+    .card { background:#3b3b3b; padding:20px; border-radius:8px; max-width:540px; margin:0 auto; box-shadow:0 6px 18px rgba(0,0,0,0.5); }
+    label { display:block; margin-bottom:8px; }
+    input { padding:8px 10px; width:100%; box-sizing:border-box; border-radius:4px; border:1px solid #666; background:#2b2b2b; color:#eee; }
+    button { margin-top:12px; padding:10px 14px; border-radius:6px; border:none; background:#4caf50; color:#fff; cursor:pointer; }
+    .result { margin-top:16px; padding:12px; background:#262626; border-radius:6px; text-align:center; font-weight:700; }
+    small { color:#bbb; display:block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Zerinho ou Um">
+    <h2>Zerinho ou Um</h2>
+    <p>Informe os valores (0 ou 1) de Alice, Beto e Clara separados por espaço.</p>
+
+    <label for="entrada">A B C</label>
+    <input id="entrada" type="text" placeholder="ex: 1 0 0" aria-describedby="hint" />
+
+    <button id="btn">Verificar</button>
+
+    <div id="saida" class="result" aria-live="polite">Resultado: —</div>
+    <small id="hint">Se apenas um for diferente, esse jogador vence (A, B ou C). Se todos iguais, imprime *.</small>
+  </div>
+
+  <script>
+    function decidir(a,b,c) {
+      // garante numeros 0 ou 1
+      a = Number(a); b = Number(b); c = Number(c);
+      if (Number.isNaN(a) || Number.isNaN(b) || Number.isNaN(c)) return "*";
+      if ((a !== 0 && a !== 1) || (b !== 0 && b !== 1) || (c !== 0 && c !== 1)) return "*";
+
+      if (a !== b && a !== c) return "A";
+      if (b !== a && b !== c) return "B";
+      if (c !== a && c !== b) return "C";
+      return "*";
+    }
+
+    document.getElementById("btn").addEventListener("click", () => {
+      const raw = document.getElementById("entrada").value.trim();
+      if (!raw) {
+        document.getElementById("saida").textContent = "Resultado: *";
+        return;
+      }
+      const parts = raw.split(/\s+/);
+      const [A,B,C] = parts;
+      const res = decidir(A,B,C);
+      document.getElementById("saida").textContent = "Resultado: " + res;
+    });
+
+    // permite pressionar Enter no campo
+    document.getElementById("entrada").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") document.getElementById("btn").click();
+    });
+  </script>
+</body>
+</html>
