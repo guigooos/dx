@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melhor Aluno</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Melhor Aluno</h1>
+
+    <p>
+      Informe a quantidade de alunos e, em seguida, digite o nome e a nota de cada um.
+      O programa mostrará o nome do aluno com a maior nota.
+    </p>
+
+    <label for="inputArea">Entrada</label>
+    <textarea id="inputArea" placeholder="Exemplo:
+3
+Beatriz 9.0
+Carlos 8.2
+Clara 9.4"></textarea>
+
+    <div class="controls">
+      <button id="runBtn">Calcular</button>
+      <button id="clearBtn" class="secondary">Limpar</button>
+    </div>
+
+    <label for="output">Saída</label>
+    <input id="output" readonly placeholder="Resultado aparecerá aqui">
+
+    <details class="example">
+      <summary>Exemplos</summary>
+      <pre>
+Entrada:
+3
+Beatriz 9.0
+Carlos 8.2
+Clara 9.4
+
+Saída:
+Clara
+
+Entrada:
+4
+Alberto 8.5
+Aline 5.0
+Eduardo 6.0
+Berenice 7.0
+
+Saída:
+Alberto
+      </pre>
+    </details>
+  </main>
+
+  <script src="script2.js"></script>
+</body>
+</html>

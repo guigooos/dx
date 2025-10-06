@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campeã de Streaming</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Campeã de Streaming</h1>
+    <p>Informe a entrada no formato:<br>
+      <code>N</code> (número de músicas) seguido dos <code>N</code> inteiros (quantas vezes cada música foi tocada).
+      Podem estar em linhas separadas ou na mesma linha separados por espaços.
+    </p>
+
+    <label for="inputArea">Entrada</label>
+    <textarea id="inputArea" placeholder="Exemplo:\n4\n1000 4000 500 2500"></textarea>
+
+    <div class="controls">
+      <button id="runBtn">Calcular maior</button>
+      <button id="clearBtn" class="secondary">Limpar</button>
+    </div>
+
+    <label for="output">Saída</label>
+    <input id="output" readonly placeholder="Resultado aparecerá aqui">
+
+    <details class="example">
+      <summary>Exemplos</summary>
+      <pre>Entrada:
+4
+1000 4000 500 2500
+
+Saída:
+4000
+
+Entrada:
+6
+0 1 6 6 2 3
+
+Saída:
+6
+      </pre>
+    </details>
+  </main>
+
+  <script src="script1.js"></script>
+</body>
+</html>

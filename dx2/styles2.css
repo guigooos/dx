@@ -1,0 +1,112 @@
+:root {
+  --bg: #0b1630;
+  --card: #0f2345;
+  --accent: #d67dff;
+  --text: #e8f0ff;
+  --muted: #b6c6de;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #07102a);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  padding: 24px;
+  max-width: 750px;
+  width: 100%;
+}
+
+h1 {
+  color: var(--accent);
+  font-size: 22px;
+  margin-top: 0;
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px;
+  font-family: monospace;
+  resize: vertical;
+}
+
+input[readonly] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: monospace;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #1b0a28;
+  font-weight: bold;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.example {
+  margin-top: 12px;
+}
+
+pre {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  overflow-x: auto;
+}
